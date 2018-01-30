@@ -1,4 +1,8 @@
 defmodule SurflineRegionsFetcher.Areas do
+  @moduledoc """
+  Provides a method for retrieving Areas from Surfline.
+  """
+
   import SurflineRegionsFetcher.Base
 
   def get_areas do

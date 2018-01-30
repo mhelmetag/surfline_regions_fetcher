@@ -1,12 +1,17 @@
 defmodule SurflineRegionsFetcher.Base do
+  @moduledoc """
+  Provides the general logic for retrieving and parsing HTML selectors from Surfline.
+
+  Used for getting Areas, Regions and SubRegions from Surfline.
+  """
+
   @headers ["x-requested-with": "XMLHttpRequest", "accept": "text/html"]
 
   def get(url, selector) do
-    case HTTPoison.get(url, @headers) do
-      {:ok, %HTTPoison.Response{status_code: 200, body: body}}
-        -> process_html(body, selector)
-      {:error, %HTTPoison.Error{reason: reason}} -> raise reason
-    end
+    {:ok, %HTTPoison.Response{status_code: 200, body: body}}
+      = HTTPoison.get(url, @headers)
+
+    process_html(body, selector)
   end
 
   def process_html(html, selector) do
