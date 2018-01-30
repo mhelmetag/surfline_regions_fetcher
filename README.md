@@ -1,6 +1,6 @@
 # SurflineRegionsFetcher
 
-Gets Areas, Regions and SubRegions from Surfline.
+Gets Areas, Regions and SubRegions for Surfline Forecasts.
 
 ## Installation
 
@@ -14,9 +14,11 @@ def deps do
 end
 ```
 
+## Docs
+
 For now, there are no docs...
 
-However, this library can be used like this for now:
+However, this library can be used like this:
 ```elixir
 # To get all Areas
 SurflineRegionsFetcher.Areas.get_areas

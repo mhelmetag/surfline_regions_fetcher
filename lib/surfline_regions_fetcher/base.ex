@@ -5,19 +5,19 @@ defmodule SurflineRegionsFetcher.Base do
   Used for getting Areas, Regions and SubRegions from Surfline.
   """
 
-  @headers ["x-requested-with": "XMLHttpRequest", "accept": "text/html"]
+  @headers ["x-requested-with": "XMLHttpRequest", accept: "text/html"]
 
   def get(url, selector) do
-    {:ok, %HTTPoison.Response{status_code: 200, body: body}}
-      = HTTPoison.get(url, @headers)
+    {:ok, %HTTPoison.Response{status_code: 200, body: body}} =
+      HTTPoison.get(url, @headers)
 
     process_html(body, selector)
   end
 
   def process_html(html, selector) do
-    html |>
-    find_select(selector) |>
-    process_select
+    html
+    |> find_select(selector)
+    |> process_select
   end
 
   defp find_select(html, selector) do
@@ -33,14 +33,14 @@ defmodule SurflineRegionsFetcher.Base do
   end
 
   def filter_options(option_nodes) do
-    Enum.filter(option_nodes, fn(option_node) ->
+    Enum.filter(option_nodes, fn option_node ->
       [surfline_id] = Floki.attribute(option_node, "value")
       surfline_id != ""
     end)
   end
 
   def process_options(option_nodes) do
-    Enum.map(option_nodes, fn(option_node) -> process_option(option_node) end)
+    Enum.map(option_nodes, fn option_node -> process_option(option_node) end)
   end
 
   defp process_option(option_node) do
