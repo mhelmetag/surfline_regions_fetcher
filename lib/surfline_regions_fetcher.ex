@@ -1,18 +1,5 @@
 defmodule SurflineRegionsFetcher do
   @moduledoc """
-  Documentation for SurflineRegionsFetcher.
+  Gets Areas, Regions and SubRegions for Surfline Forecasts.
   """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> SurflineRegionsFetcher.hello
-      :world
-
-  """
-  def hello do
-    :world
-  end
 end
