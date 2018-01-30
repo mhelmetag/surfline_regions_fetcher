@@ -9,7 +9,7 @@ For now, this can only be downloaded from GitHub:
 ```elixir
 def deps do
   [
-    {:surfline_regions_fetcher, github: "mhelmetag/surfline_regions_fetcher", "~> 0.1.0"}
+    {:surfline_regions_fetcher, github: "mhelmetag/surfline_regions_fetcher", tag: "0.1.0"}
   ]
 end
 ```
