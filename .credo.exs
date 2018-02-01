@@ -3,7 +3,7 @@
     %{
       name: "default",
       files: %{
-        excluded: ["_build/", ".git/", "deps/"]
+        excluded: ["_build/", "deps/"]
       },
       requires: [],
       strict: true,

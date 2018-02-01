@@ -1,6 +1,6 @@
 # SurflineRegionsFetcher
 
-Gets Areas, Regions and SubRegions for Surfline Forecasts.
+Gets Areas, Regions and Sub Regions for Surfline Forecasts.
 
 ## Installation
 
@@ -69,7 +69,7 @@ SurflineRegionsFetcher.Regions.get_regions("4716")
   %{name: "Southern Mexico", surfline_id: "2090"}
 ]
 
-# To get all SubRegions in a Region
+# To get all Sub Regions in a Region
 SurflineRegionsFetcher.SubRegions.get_sub_regions("2081")
 [
   %{name: "North Santa Barbara County", surfline_id: "2963"},
