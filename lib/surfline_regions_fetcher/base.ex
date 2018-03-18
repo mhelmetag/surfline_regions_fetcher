@@ -14,7 +14,7 @@ defmodule SurflineRegionsFetcher.Base do
     process_html(body, selector)
   end
 
-  def process_html(html, selector) do
+  defp process_html(html, selector) do
     html
     |> find_select(selector)
     |> process_select

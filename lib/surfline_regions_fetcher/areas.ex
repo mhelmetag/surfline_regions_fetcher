@@ -5,7 +5,9 @@ defmodule SurflineRegionsFetcher.Areas do
 
   import SurflineRegionsFetcher.Base
 
+  @base_url "http://www.surfline.com/surf-forecasts/"
+
   def get_areas do
-    get("http://www.surfline.com/surf-forecasts/", "[name=areaSelect]")
+    get(@base_url, "[name=areaSelect]")
   end
 end

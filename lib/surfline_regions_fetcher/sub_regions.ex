@@ -5,11 +5,10 @@ defmodule SurflineRegionsFetcher.SubRegions do
 
   import SurflineRegionsFetcher.Base
 
-  def get_sub_regions(region_id) do
-    url =
-      "http://www.surfline.com/surfline/forecasts4/includes_forecast/forecast_selector_output.cfm?type=subregion&id=" <>
-        region_id
+  @base_url "http://www.surfline.com/surfline/forecasts4/includes_forecast/forecast_selector_output.cfm?type=subregion&id="
 
-    get(url, "[name=subregionSelect]")
+  def get_sub_regions(region_id) do
+    @base_url <> region_id
+    |> get("[name=subregionSelect]")
   end
 end
